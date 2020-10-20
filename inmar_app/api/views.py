@@ -4,6 +4,7 @@ from rest_framework.generics import ListCreateAPIView
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
+from inmar_app.api.parser import JSONSchemaParser
 from inmar_app.api.serilizers import (
     StoreSerializer,
     DepartmentSerializer,
@@ -15,6 +16,7 @@ from inmar_app.models import Store, Location, Department, Category, SubCategory
 
 
 class StoreView(ListCreateAPIView):
+    parser_classes = (JSONSchemaParser,)
     queryset = Store.objects.all()
     serializer_class = StoreSerializer
 

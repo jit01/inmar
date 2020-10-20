@@ -25,7 +25,7 @@ SECRET_KEY = '3d*aiwi$i*v@-g3^6t%s4%r(g#9%op$g0oc(7)m2d4l%l135a7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,6 +52,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'inmar_test.urls'
+
+REST_FRAMEWORK = {
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
 
 TEMPLATES = [
     {
